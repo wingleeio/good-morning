@@ -1,0 +1,22 @@
+{
+    "name": "bot",
+    "module": "src/index.ts",
+    "scripts": {
+        "dev": "bun src/lib/env.ts && bun --watch src/index.ts",
+        "build": "bun src/lib/env.ts",
+        "start": "bun src/index.ts"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/node": "^20.14.12"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@elysiajs/cron": "^1.1.0",
+        "database": "workspace:*",
+        "discord.js": "^14.15.3",
+        "elysia": "^1.1.4"
+    }
+}

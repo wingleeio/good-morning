@@ -1,0 +1,22 @@
+{
+    "name": "database",
+    "module": "src/index.ts",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "scripts": {
+        "generate": "bunx @edgedb/generate edgeql-js",
+        "migrate": "edgedb migration create && edgedb migrate"
+    },
+    "devDependencies": {
+        "@edgedb/generate": "^0.5.4",
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "edgedb": "^1.5.8"
+    }
+}
