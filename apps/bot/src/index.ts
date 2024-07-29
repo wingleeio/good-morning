@@ -65,7 +65,7 @@ client.on(Events.MessageCreate, async (m) => {
         const currentTime = new Date();
         const targetTime = new Date();
 
-        targetTime.setUTCHours(6, 0, 0, 0);
+        targetTime.setUTCHours(2, 0, 0, 0);
 
         if (targetTime > currentTime) {
             targetTime.setUTCDate(targetTime.getUTCDate() - 1);
