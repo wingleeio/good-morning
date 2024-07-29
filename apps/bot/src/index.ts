@@ -80,8 +80,8 @@ client.on(Events.MessageCreate, async (m) => {
         console.log("Current time:", currentTime);
 
         const targetTime = new Date();
-        targetTime.setUTCHours(2, 0, 0, 0);
-        console.log("Target time (2:00 UTC):", targetTime);
+        targetTime.setUTCHours(9, 0, 0, 0);
+        console.log("Target time (9:00 UTC):", targetTime);
 
         if (targetTime.getTime() > currentTime.getTime()) {
             targetTime.setUTCDate(targetTime.getUTCDate() - 1);
