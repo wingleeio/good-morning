@@ -80,8 +80,8 @@ client.on(Events.MessageCreate, async (m) => {
         console.log("Current time:", currentTime);
 
         const targetTime = new Date();
-        targetTime.setUTCHours(9, 0, 0, 0);
-        console.log("Target time (9:00 UTC):", targetTime);
+        targetTime.setUTCHours(13, 0, 0, 0);
+        console.log("Target time (13:00 UTC):", targetTime);
 
         if (targetTime.getTime() > currentTime.getTime()) {
             targetTime.setUTCDate(targetTime.getUTCDate() - 1);
@@ -137,7 +137,7 @@ new Elysia()
     .use(
         cron({
             name: "heartbeat",
-            pattern: "0 14 * * *",
+            pattern: "0 13 * * *",
             run() {
                 console.log("Running heartbeat cron job");
                 const channel: TextChannel = client.channels.cache.get("1248113350353879052")! as TextChannel;
