@@ -68,10 +68,10 @@ client.on(Events.MessageCreate, async (m) => {
         targetTime.setUTCHours(6, 0, 0, 0);
 
         if (targetTime > currentTime) {
-            targetTime.setDate(targetTime.getDate() - 1);
+            targetTime.setUTCDate(targetTime.getUTCDate() - 1);
         }
 
-        if ((user.last_good_morning?.getTime() ?? 0) > targetTime.getTime()) {
+        if ((user.last_good_morning?.getUTCMilliseconds() ?? 0) > targetTime.getUTCMilliseconds()) {
             return;
         }
 
@@ -81,11 +81,14 @@ client.on(Events.MessageCreate, async (m) => {
 
         streakLoseTime.setDate(streakLoseTime.getDate() - 1);
 
-        if ((user.last_good_morning?.getTime() ?? currentTime.getTime()) < streakLoseTime.getTime()) {
+        if (
+            (user.last_good_morning?.getUTCMilliseconds() ?? currentTime.getUTCMilliseconds()) <
+            streakLoseTime.getUTCMilliseconds()
+        ) {
             streak = 1;
         }
 
-        const millisecondsDifference = currentTime.getTime() - targetTime.getTime();
+        const millisecondsDifference = currentTime.getUTCMilliseconds() - targetTime.getUTCMilliseconds();
         const minutesDifference = millisecondsDifference / 1000 / 60;
         const timeDifferenceInMinutes = Math.max(0, minutesDifference);
 
