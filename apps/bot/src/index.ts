@@ -141,7 +141,7 @@ new Elysia()
             run() {
                 console.log("Running heartbeat cron job");
                 const channel: TextChannel = client.channels.cache.get("1248113350353879052")! as TextChannel;
-                channel.send("Good morning <@everyone>, don't forget to say gm!").catch(console.error);
+                channel.send("Good morning @everyone, don't forget to say gm!").catch(console.error);
                 console.log("Heartbeat message sent");
             },
         })
